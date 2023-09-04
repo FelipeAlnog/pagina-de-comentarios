@@ -44,9 +44,11 @@
                             <br>
                             <br>
                             <br>
+                            
+                                </form>
                                     <?php
 
-$conexion=mysqli_connect("localhost","root","","meuteste"); 
+$conexion=mysqli_connect("localhost","root","","meuteste");
 $resultado= mysqli_query($conexion, 'SELECT * FROM comentarios');
 
 while($comentario = mysqli_fetch_object($resultado)){
@@ -55,7 +57,7 @@ while($comentario = mysqli_fetch_object($resultado)){
 
     
 
-<b><?php echo($comentario->nome);  ?></b>(<?php echo ($comentario->fecha); ?>) comentou: 
+<b><?php echo($comentario->nome);  ?></b> (<?php echo ($comentario->data_envio); ?>) comentou: 
 <br />
 <?php echo ($comentario->comentario);?>
 <br />
@@ -63,8 +65,8 @@ while($comentario = mysqli_fetch_object($resultado)){
     <input type="hidden" name="comentario_id" value="<?php echo ($comentario->id); ?>">
     <input type="submit" class="btn btn-danger" value="Excluir Comentário">
 </form>
-<hr />
 
+<hr />
 
 
 
@@ -74,8 +76,6 @@ while($comentario = mysqli_fetch_object($resultado)){
 }
 
                                     ?>
-                            
-                                </form>
                           
                 </div>
                 
